@@ -2,8 +2,13 @@
 
 namespace App\Models;
 
-class Team
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Team extends Model
 {
+    use HasFactory;
+
     private string $name;
 
     public function getName(): string

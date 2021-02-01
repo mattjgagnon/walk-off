@@ -4,22 +4,25 @@ namespace Tests\Unit;
 
 use App\Models\Game;
 use App\Models\Team;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class GameTest extends TestCase
 {
     /**
      * @test
      */
-    public function has_two_teams()
+    public function can_add_only_two_different_teams()
     {
-        $team1 = new Team();
-        $team1->setName('Boston Red Sox');
-        $team2 = new Team();
-        $team2->setName('New York Yankees');
+        $team1 = Team::factory()->make();
+        $team2 = Team::factory()->make();
         $game = new Game();
         $game->setTeam($team1);
         $game->setTeam($team2);
+
         $this->assertCount(2, $game->getTeams());
+
+        $this->expectException('Exception');
+        $team3 = Team::factory()->make();
+        $game->setTeam($team3);
     }
 }
