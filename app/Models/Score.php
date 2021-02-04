@@ -10,6 +10,7 @@ class Score extends Model
 {
     use HasFactory;
 
+    private int $away;
     private int $home;
 
     public function __construct(int $home = 0, int $away = 0)
