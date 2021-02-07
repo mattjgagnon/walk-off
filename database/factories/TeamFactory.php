@@ -34,6 +34,7 @@ class TeamFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->randomElement($this->teamNames),
+            'wins' => $this->faker->randomDigit,
         ];
     }
 }

@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use App\Models\Score;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class ScoreTest extends TestCase
 {

@@ -42,6 +42,39 @@ class Team extends Model
         'Toronto Blue Jays',
         'Washington Nationals',
     ];
+    private int $wins = 0;
+    private int $losses = 0;
+
+    public function getLosses(): int
+    {
+        return $this->losses;
+    }
+
+    public function setLoss(): void
+    {
+        $this->losses++;
+    }
+
+    public function getWins(): int
+    {
+        return $this->wins;
+    }
+
+    public function setWin(): void
+    {
+        $this->wins++;
+    }
+
+    public function getWinPercentage(): float
+    {
+        $games = $this->getGamesPlayed();
+
+        if ($this->getLosses() === 0) {
+            return 100;
+        }
+
+        return $this->getWins() / $games * 100;
+    }
 
     public function getName(): string
     {
@@ -55,5 +88,10 @@ class Team extends Model
         }
 
         $this->name = $name;
+    }
+
+    private function getGamesPlayed(): int
+    {
+        return $this->getWins() + $this->getLosses();
     }
 }
