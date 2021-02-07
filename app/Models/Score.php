@@ -46,6 +46,11 @@ class Score extends Model
         return $this->getHome() > $this->getAway();
     }
 
+    public function isAwayTeamWinning(): bool
+    {
+        return $this->getAway() > $this->getHome();
+    }
+
     protected function guardAgainstLessThanOneRun(int $teamScoreIncrement): void
     {
         if ($teamScoreIncrement < 1) {

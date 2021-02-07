@@ -55,4 +55,15 @@ class ScoreTest extends TestCase
 
         $this->assertTrue($this->score->isHomeTeamWinning());
     }
+
+    /**
+     * @test
+     */
+    public function can_tell_if_away_team_is_winning()
+    {
+        $this->score->incrementHome(1);
+        $this->score->incrementAway(3);
+
+        $this->assertTrue($this->score->isAwayTeamWinning());
+    }
 }
