@@ -10,14 +10,6 @@ class TeamFactory extends Factory
 {
     use WithFaker;
 
-    private array $teamNames = [
-        'Boston Red Sox',
-        'Los Angeles Angels of Anaheim',
-        'Los Angeles Dodgers',
-        'New York Yankees',
-        'Toronto Blue Jays',
-    ];
-
     /**
      * The name of the factory's corresponding model.
      *
@@ -32,8 +24,11 @@ class TeamFactory extends Factory
      */
     public function definition()
     {
+        $team = new Team();
+        $allTeams = $team->getAll();
         return [
-            'name' => $this->faker->unique()->randomElement($this->teamNames),
+            'losses' => $this->faker->randomDigit,
+            'name' => $this->faker->unique()->randomElement($allTeams),
             'wins' => $this->faker->randomDigit,
         ];
     }

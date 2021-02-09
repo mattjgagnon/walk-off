@@ -12,7 +12,8 @@ class PlayerTest extends TestCase
      */
     public function can_set_and_get_name()
     {
-        $player = Player::factory()->make();
+        $player = new Player();
+        $player->setName('Matt Gagnon');
 
         $this->assertIsString($player->getName());
     }

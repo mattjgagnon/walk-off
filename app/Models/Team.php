@@ -90,6 +90,11 @@ class Team extends Model
         $this->name = $name;
     }
 
+    public function getAll()
+    {
+        return $this->allTeams;
+    }
+
     private function getGamesPlayed(): int
     {
         return $this->getWins() + $this->getLosses();

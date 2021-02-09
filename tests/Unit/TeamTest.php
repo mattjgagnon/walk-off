@@ -63,4 +63,13 @@ class TeamTest extends TestCase
         $team = Team::factory()->make();
         $team->setName('An Invalid Team Name');
     }
+
+    /**
+     * @test
+     */
+    public function can_get_all_team_names()
+    {
+        $team = Team::factory()->make();
+        $this->assertCount(30, $team->getAll());
+    }
 }
