@@ -30,6 +30,26 @@ class AtBatTest extends TestCase
     /**
      * @test
      */
+    public function is_a_strikeout()
+    {
+        $atBat = new AtBat(3, 3);
+
+        $this->assertTrue($atBat->isAStrikeout());
+    }
+
+    /**
+     * @test
+     */
+    public function is_not_a_strikeout()
+    {
+        $atBat = new AtBat(3, 0);
+
+        $this->assertFalse($atBat->isAStrikeout());
+    }
+
+    /**
+     * @test
+     */
     public function has_no_more_than_four_balls()
     {
         $atBat = new AtBat();
