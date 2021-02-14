@@ -48,6 +48,15 @@ class AtBat extends Model
         return false;
     }
 
+    public function isAWalk(): bool
+    {
+        if ($this->balls == 4) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function setBalls(int $balls = 0): void
     {
         if ($this->balls + $balls > 4) {

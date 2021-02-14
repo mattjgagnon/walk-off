@@ -50,6 +50,26 @@ class AtBatTest extends TestCase
     /**
      * @test
      */
+    public function is_a_walk()
+    {
+        $atBat = new AtBat(4, 1);
+
+        $this->assertTrue($atBat->isAWalk());
+    }
+
+    /**
+     * @test
+     */
+    public function is_not_a_walk()
+    {
+        $atBat = new AtBat(3, 0);
+
+        $this->assertFalse($atBat->isAWalk());
+    }
+
+    /**
+     * @test
+     */
     public function has_no_more_than_four_balls()
     {
         $atBat = new AtBat();
