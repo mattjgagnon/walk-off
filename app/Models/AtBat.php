@@ -19,10 +19,17 @@ class AtBat extends Model
         $this->setStrikes($strikes);
     }
 
-
     public function getBalls()
     {
         return $this->balls;
+    }
+
+    /**
+     * @return array: balls, strikes
+     */
+    public function getCount(): array
+    {
+        return [$this->balls, $this->strikes];
     }
 
     public function getStrikes(): int
@@ -33,6 +40,24 @@ class AtBat extends Model
     public function isFullCount(): bool
     {
         if ($this->balls == 3 && $this->strikes == 2) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function isHitterAheadInCount()
+    {
+        if ($this->balls > $this->strikes) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function isPitcherAheadInCount()
+    {
+        if ($this->balls < $this->strikes) {
             return true;
         }
 

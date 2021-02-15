@@ -10,6 +10,32 @@ class AtBatTest extends TestCase
     /**
      * @test
      */
+    public function can_get_the_current_count()
+    {
+        $atBat = new AtBat(3, 1);
+
+        $this->assertEquals([3, 1], $atBat->getCount());
+    }
+
+    /**
+     * @test
+     */
+    public function is_ahead_in_the_count()
+    {
+        $atBat = new AtBat(1, 0);
+
+        $this->assertTrue($atBat->isHitterAheadInCount());
+        $this->assertFalse($atBat->isPitcherAheadInCount());
+
+        $atBat->setStrikes(2);
+
+        $this->assertTrue($atBat->isPitcherAheadInCount());
+        $this->assertFalse($atBat->isHitterAheadInCount());
+    }
+
+    /**
+     * @test
+     */
     public function is_a_full_count()
     {
         $atBat = new AtBat(3, 2);
