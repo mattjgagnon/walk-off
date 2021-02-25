@@ -29,6 +29,14 @@ class Game extends Model
         return $this->teams;
     }
 
+    /**
+     * @todo Implement
+     */
+    public function isNinthInningOrLater(): bool
+    {
+        return true;
+    }
+
     public function setAtBatEvent(AtBatEvent $atBatEvent): void
     {
         $this->atBatEvent = $atBatEvent;

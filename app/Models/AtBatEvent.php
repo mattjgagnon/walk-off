@@ -66,12 +66,4 @@ class AtBatEvent extends Model
     {
         return false;
     }
-
-    /**
-     * @todo Implement
-     */
-    public function isNinthInningOrLater(): bool
-    {
-        return true;
-    }
 }
