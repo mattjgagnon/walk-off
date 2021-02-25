@@ -11,6 +11,7 @@ class AtBat extends Model
 
     private int $balls = 0;
     private int $strikes = 0;
+    private Player $player;
 
     public function __construct(int $balls = 0, int $strikes = 0)
     {
@@ -30,6 +31,11 @@ class AtBat extends Model
     public function getCount(): array
     {
         return [$this->balls, $this->strikes];
+    }
+
+    public function getPlayer(): Player
+    {
+        return $this->player;
     }
 
     public function getStrikes(): int
@@ -89,6 +95,11 @@ class AtBat extends Model
         }
 
         $this->balls = $balls;
+    }
+
+    public function setPlayer(Player $player): void
+    {
+        $this->player = $player;
     }
 
     public function setStrikes(int $strikes = 0): void

@@ -18,6 +18,7 @@ class AtBatEventTest extends TestCase
     {
         $player = new Player();
         $atBat = new AtBat(3, 2);
+        $atBat->setPlayer($player);
         $atBatEvent = new AtBatEvent($player, $atBat);
         $game = new Game();
 
