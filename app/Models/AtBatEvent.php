@@ -29,7 +29,32 @@ class AtBatEvent extends Model
     /**
      * @todo Implement
      */
+    public function isAGoAheadRBI(): bool
+    {
+        return true;
+    }
+
+    public function isAHit()
+    {
+        if ($this->player->makesContact() && $this->isAFairBall() && !$this->isBallCaught()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * @todo Implement
+     */
     public function isAHomeRun(): bool
+    {
+        return true;
+    }
+
+    /**
+     * @todo Implement
+     */
+    public function isAPlayerFromHomeTeam(): bool
     {
         return true;
     }
@@ -42,12 +67,11 @@ class AtBatEvent extends Model
         return false;
     }
 
-    public function isAHit()
+    /**
+     * @todo Implement
+     */
+    public function isNinthInningOrLater(): bool
     {
-        if ($this->player->makesContact() && $this->isAFairBall() && !$this->isBallCaught()) {
-            return true;
-        }
-
-        return false;
+        return true;
     }
 }

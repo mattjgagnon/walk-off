@@ -23,5 +23,8 @@ class AtBatEventTest extends TestCase
 
         $this->assertTrue($atBatEvent->isAHit());
         $this->assertTrue($atBatEvent->isAHomeRun());
+        $this->assertTrue($atBatEvent->isAGoAheadRBI());
+        $this->assertTrue($atBatEvent->isAPlayerFromHomeTeam());
+        $this->assertTrue($atBatEvent->IsNinthInningOrLater());
     }
 }
