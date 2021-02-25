@@ -21,6 +21,7 @@ class AtBatEventTest extends TestCase
         $atBat->setPlayer($player);
         $atBatEvent = new AtBatEvent($player, $atBat);
         $game = new Game();
+        $game->setAtBatEvent($atBatEvent);
 
         $this->assertTrue($atBatEvent->isAHit());
         $this->assertTrue($atBatEvent->isAHomeRun());
