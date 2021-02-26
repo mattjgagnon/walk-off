@@ -33,11 +33,6 @@ class AtBat extends Model
         return [$this->balls, $this->strikes];
     }
 
-    public function getPlayer(): Player
-    {
-        return $this->player;
-    }
-
     public function getStrikes(): int
     {
         return $this->strikes;
