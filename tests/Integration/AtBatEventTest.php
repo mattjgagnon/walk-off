@@ -29,4 +29,18 @@ class AtBatEventTest extends TestCase
         $this->assertTrue($atBatEvent->isAPlayerFromHomeTeam());
         $this->assertTrue($game->IsNinthInningOrLater());
     }
+
+    /**
+     * @test
+     */
+    public function can_not_get_a_hit()
+    {
+        $player = new Player();
+        $atBat = new AtBat(3, 2);
+        $atBat->setPlayer($player);
+        $atBatEvent = new AtBatEvent($player, $atBat);
+        $atBatEvent->setIsBallCaught(true);
+
+        $this->assertFalse($atBatEvent->isAHit());
+    }
 }

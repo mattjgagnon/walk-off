@@ -19,11 +19,6 @@ class Game extends Model
         $this->teams = [];
     }
 
-    public function getAtBatEvent(): AtBatEvent
-    {
-        return $this->atBatEvent;
-    }
-
     public function getTeams(): array
     {
         return $this->teams;
