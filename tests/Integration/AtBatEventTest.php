@@ -20,6 +20,7 @@ class AtBatEventTest extends TestCase
         $atBat = new AtBat(3, 2);
         $atBat->setPlayer($player);
         $atBatEvent = new AtBatEvent($player, $atBat);
+        $atBatEvent->setIsAFairBall(true);
         $game = new Game();
         $game->setAtBatEvent($atBatEvent);
 
@@ -40,6 +41,7 @@ class AtBatEventTest extends TestCase
         $atBat->setPlayer($player);
         $atBatEvent = new AtBatEvent($player, $atBat);
         $atBatEvent->setIsBallCaught(true);
+        $atBatEvent->setIsAFairBall(true);
 
         $this->assertFalse($atBatEvent->isAHit());
     }

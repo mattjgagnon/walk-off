@@ -12,6 +12,7 @@ class AtBatEvent extends Model
     private Player $player;
     private AtBat $atBat;
     private bool $isBallCaught = false;
+    private bool $fairBall = false;
 
     public function __construct(Player $player, AtBat $atBat)
     {
@@ -20,12 +21,9 @@ class AtBatEvent extends Model
         $this->player = $player;
     }
 
-    /**
-     * @todo Implement
-     */
     public function isAFairBall(): bool
     {
-        return true;
+        return $this->fairBall;
     }
 
     /**
@@ -69,5 +67,10 @@ class AtBatEvent extends Model
     public function setIsBallCaught(bool $isBallCaught): void
     {
         $this->isBallCaught = $isBallCaught;
+    }
+
+    public function setIsAFairBall(bool $fairBall): void
+    {
+        $this->fairBall = $fairBall;
     }
 }
