@@ -7,10 +7,8 @@ use Tests\TestCase;
 
 class PlayerTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function can_set_and_get_name()
+    /** @test */
+    public function can_set_and_get_name(): void
     {
         $player = new Player();
         $player->setName('Matt Gagnon');

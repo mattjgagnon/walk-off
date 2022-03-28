@@ -14,7 +14,7 @@ class AtBatEventTest extends TestCase
      * @test
      * @todo Implement fully
      */
-    public function can_hit_a_walkoff_home_run()
+    public function can_hit_a_walkoff_home_run(): void
     {
         $player = new Player();
         $atBat = new AtBat(3, 2);
@@ -31,10 +31,8 @@ class AtBatEventTest extends TestCase
         $this->assertTrue($game->IsNinthInningOrLater());
     }
 
-    /**
-     * @test
-     */
-    public function can_not_get_a_hit()
+    /** @test */
+    public function can_not_get_a_hit(): void
     {
         $player = new Player();
         $atBat = new AtBat(3, 2);

@@ -16,10 +16,8 @@ class GameTest extends TestCase
         $this->game = new Game();
     }
 
-    /**
-     * @test
-     */
-    public function can_add_only_two_different_teams()
+    /** @test */
+    public function can_add_only_two_different_teams(): void
     {
         $this->initGame();
 
@@ -30,20 +28,16 @@ class GameTest extends TestCase
         $this->game->setTeam($team3);
     }
 
-    /**
-     * @test
-     */
-    public function can_start_a_new_game_with_two_teams()
+    /** @test */
+    public function can_start_a_new_game_with_two_teams(): void
     {
         $this->initGame();
 
         $this->assertTrue($this->game->start());
     }
 
-    /**
-     * @test
-     */
-    public function trying_to_start_a_new_game_with_less_than_two_teams_throws_an_exception()
+    /** @test */
+    public function trying_to_start_a_new_game_with_less_than_two_teams_throws_an_exception(): void
     {
         $team1 = Team::factory()->make();
         $this->game->setTeam($team1);

@@ -7,20 +7,16 @@ use Tests\TestCase;
 
 class AtBatTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function can_get_the_current_count()
+    /** @test */
+    public function can_get_the_current_count(): void
     {
         $atBat = new AtBat(3, 1);
 
         $this->assertEquals([3, 1], $atBat->getCount());
     }
 
-    /**
-     * @test
-     */
-    public function is_ahead_in_the_count()
+    /** @test */
+    public function is_ahead_in_the_count(): void
     {
         $atBat = new AtBat(1, 0);
 
@@ -33,70 +29,56 @@ class AtBatTest extends TestCase
         $this->assertFalse($atBat->isHitterAheadInCount());
     }
 
-    /**
-     * @test
-     */
-    public function is_a_full_count()
+    /** @test */
+    public function is_a_full_count(): void
     {
         $atBat = new AtBat(3, 2);
 
         $this->assertTrue($atBat->isFullCount());
     }
 
-    /**
-     * @test
-     */
-    public function is_not_a_full_count()
+    /** @test */
+    public function is_not_a_full_count(): void
     {
         $atBat = new AtBat(3, 1);
 
         $this->assertFalse($atBat->isFullCount());
     }
 
-    /**
-     * @test
-     */
-    public function is_a_strikeout()
+    /** @test */
+    public function is_a_strikeout(): void
     {
         $atBat = new AtBat(3, 3);
 
         $this->assertTrue($atBat->isAStrikeout());
     }
 
-    /**
-     * @test
-     */
-    public function is_not_a_strikeout()
+    /** @test */
+    public function is_not_a_strikeout(): void
     {
         $atBat = new AtBat(3, 0);
 
         $this->assertFalse($atBat->isAStrikeout());
     }
 
-    /**
-     * @test
-     */
-    public function is_a_walk()
+    /** @test */
+    public function is_a_walk(): void
     {
         $atBat = new AtBat(4, 1);
 
         $this->assertTrue($atBat->isAWalk());
     }
 
-    /**
-     * @test
-     */
-    public function is_not_a_walk()
+    /** @test */
+    public function is_not_a_walk(): void
     {
         $atBat = new AtBat(3, 0);
 
         $this->assertFalse($atBat->isAWalk());
     }
 
-    /**
-     * @test
-     */
-    public function has_no_more_than_four_balls()
+    /** @test */
+    public function has_no_more_than_four_balls(): void
     {
         $atBat = new AtBat();
         $atBat->setBalls(4);
@@ -104,10 +86,8 @@ class AtBatTest extends TestCase
         $this->assertEquals(4, $atBat->getBalls());
     }
 
-    /**
-     * @test
-     */
-    public function more_than_four_balls_throws_an_exception()
+    /** @test */
+    public function more_than_four_balls_throws_an_exception(): void
     {
         $atBat = new AtBat();
 
@@ -115,10 +95,8 @@ class AtBatTest extends TestCase
         $atBat->setBalls(5);
     }
 
-    /**
-     * @test
-     */
-    public function has_no_more_than_three_strikes()
+    /** @test */
+    public function has_no_more_than_three_strikes(): void
     {
         $atBat = new AtBat();
         $atBat->setStrikes(3);
@@ -126,10 +104,8 @@ class AtBatTest extends TestCase
         $this->assertEquals(3, $atBat->getStrikes());
     }
 
-    /**
-     * @test
-     */
-    public function more_than_three_strikes_throws_an_exception()
+    /** @test */
+    public function more_than_three_strikes_throws_an_exception(): void
     {
         $atBat = new AtBat();
 
